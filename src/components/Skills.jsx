@@ -44,7 +44,7 @@ const Skills = () => {
   }
 
   return (
-    <div className='w-full mx-auto my-9 flex flex-col justify-center items-center'>
+    <div className='w-full mx-auto my-20 flex flex-col justify-center items-center'>
       <h2 className='text-3xl font-bold mb-10'>Add Skills</h2>
       <form onSubmit={submitSkills} className='flex flex-col w-[300px] space-y-2'>
         <div className='flex flex-col'>

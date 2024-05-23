@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup'; 
 import Skills from './components/Skills';
 import UserInfo from './components/UserInfo';
+import Reference from './components/Reference';
 import { UserAuth } from './context/UserContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Header from './components/Header';
@@ -23,6 +24,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+      <Route path="/reference" element={<ProtectedRoute><Reference /></ProtectedRoute>} />
       <Route path="/user-info" element={<ProtectedRoute><UserInfo /></ProtectedRoute>} />
       <Route path="/skills" element={<ProtectedRoute><Skills /></ProtectedRoute>} />
       <Route path="/login" element={<Login />} />
