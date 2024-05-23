@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { UserAuth } from '../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const { setUser } = UserAuth();
+  const Navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,6 +31,7 @@ function Login() {
 
       setUser(data);
       setMessage('Login successful!');
+      Navigate('/home');
     } catch (error) {
       setMessage('Login failed. Please try again.');
     }

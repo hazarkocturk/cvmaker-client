@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import Skills from './components/Skills';
 import { UserAuth } from './context/UserContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import Header from './components/Header';
 
 const AppRoutes = () => {
   const { loading } = UserAuth();
@@ -15,6 +16,9 @@ const AppRoutes = () => {
   }
 
   return (
+
+    <>
+    <Header />
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
@@ -22,6 +26,7 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
     </Routes>
+    </>
   );
 };
 
