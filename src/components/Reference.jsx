@@ -50,8 +50,8 @@ const Reference = () => {
   }
   return (
    
-        <div className='w-full mx-auto my-20 flex flex-col justify-center items-center'>
-      <h2 className='text-3xl font-bold mb-10'>Add References</h2>
+    <div className='w-3/4 min-h-[80vh] mx-auto my-24 pb-4 flex flex-col justify-center items-center shadow-xl rounded-2xl'>
+      <h2 className='text-3xl font-bold mb-10'>Add Reference</h2>
       <form onSubmit={handleSubmit} className='flex flex-col w-[300px] space-y-2'>
         <div className='flex flex-col'>
           <label className='mb-1'>
@@ -97,7 +97,7 @@ const Reference = () => {
             onChange={(e) => setPh_num(e.target.value)}
           />
         </div>
-        <button className='bg-blue-500 text-white p-2 rounded-md'>Add References</button>
+        <button className='bg-blue-500 text-white p-2 rounded-md'>Add Reference</button>
       </form>
       {message && <p className='mt-4'>{message}</p>}
       <Link to='/home' className='text-blue-500 mt-5'>Back to Home</Link>

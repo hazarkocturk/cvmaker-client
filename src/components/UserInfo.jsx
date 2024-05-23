@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../context/UserContext';
 
-const Skills = () => {
+const UserInfo = () => {
   const { user } = UserAuth();
   const id = user?.id;
   const [first_name, setFirst_name] = useState('');
@@ -55,12 +55,12 @@ const Skills = () => {
       setDriving_licence('');
     } catch (err) {
       console.log(err);
-      setMessage('An error occurred while adding the skill.');
+      setMessage('An error occurred while adding the info.');
     }
   }
 
   return (
-    <div className='w-full mx-auto my-20 flex flex-col justify-center items-center'>
+    <div className='w-3/4 min-h-[80vh] mx-auto my-24 pb-4 flex flex-col justify-center items-center shadow-xl rounded-2xl'>
       <h2 className='text-3xl font-bold mb-10'>Add User Info</h2>
       <form onSubmit={submitUserInfo} className='flex flex-col w-[300px] space-y-2'>
         <div className='flex flex-col'>
@@ -159,4 +159,4 @@ const Skills = () => {
   );
 }
 
-export default Skills;
+export default UserInfo;

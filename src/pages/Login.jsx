@@ -38,8 +38,8 @@ function Login() {
   };
 
   return (
-    <div className='w-full mx-auto my-9 flex flex-col justify-center items-center'>
-      <h2 className='text-3xl font-bold mb-10'>Login</h2>
+    <div className='w-3/4 min-h-[80vh] mx-auto my-24 pb-4 flex flex-col justify-center items-center shadow-xl rounded-2xl'>
+      <h2 className='text-3xl font-bold mb-10'>Log In</h2>
       <form onSubmit={handleSubmit} className='flex flex-col w-[300px] space-y-2'>
         <div className='flex flex-col'>
           <label className='mb-1'>Email:</label>
