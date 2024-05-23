@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <div>
-      <nav className='w-full h-10 flex justify-between bg-slate-200 items-center px-4'>
+      <nav className='w-full h-16 flex justify-between bg-slate-200 items-center px-4 fixed z-20 top-0'>
         <h1>Logo</h1>
         <div>
           {user ? (
