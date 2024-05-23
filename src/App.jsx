@@ -1,28 +1,28 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home'; 
 import Login from './pages/Login';
 import Signup from './pages/Signup'; 
-import { UserProvider } from './context/UserContext';
+import Skills from './components/Skills';
+import { UserAuth } from './context/UserContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
+const AppRoutes = () => {
+  const { loading } = UserAuth();
 
-function App() {
+  if (loading) {
+    return <div>Loading...</div>; 
+  }
+
   return (
-    <>
-      <UserProvider>
-      <Routes>
-        
-        <Route path="/home" element={<ProtectedRoute>
-        <Home />
-        </ProtectedRoute>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      
-      </Routes>
-      </UserProvider>
-    </>
+    <Routes>
+      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+      <Route path="/skills" element={<ProtectedRoute><Skills /></ProtectedRoute>} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+    </Routes>
   );
-}
+};
 
-export default App;
+export default AppRoutes;
