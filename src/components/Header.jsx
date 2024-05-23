@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { UserAuth } from '../context/UserContext';
 
@@ -6,6 +6,10 @@ const Header = () => {
   const { user, setUser } = UserAuth();
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    setDropdownOpen(false);
+  },[user]);
 
   const handleLogout = () => {
     setUser(null);
@@ -29,7 +33,7 @@ const Header = () => {
   return (
     <div>
       <nav className='w-full h-16 flex justify-between bg-slate-100 items-center px-4 fixed z-20 top-0 shadow'>
-        <h1>Logo</h1>
+        <h1 className='text-xl font-bold'>LOGO</h1>
         <div>
           {user ? (
             <div className='flex items-center gap-4'>
